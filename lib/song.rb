@@ -47,8 +47,8 @@ class Song
     alphabetized
   end
 
-  def self.new_from_filename(mp3_data)
-    song_array = mp3_data.split(" - ")
+  def self.new_from_filename(filename)
+    song_array = filename.split(" - ")
     song_array[1] = song_array[1].chomp(".mp3")
     song = self.new
     song.name = song_array[1]
