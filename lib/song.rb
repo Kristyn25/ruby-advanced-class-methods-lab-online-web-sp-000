@@ -46,4 +46,19 @@ class Song
     alphabetized = self.all.sort_by {|song| song.name}
     alphabetized
   end
+
+  def self.new_from_filename(mp3_data)
+    rows =mp3_data.split("\n")
+    song = rows.collect do |row|
+      data = row.split(", ")
+      artist = data[0]
+      name = data[1]
+
+      song = self.new_by_name
+      song.name = title
+      song.artist = artist
+      song
+    end
+    song
+  end
 end
